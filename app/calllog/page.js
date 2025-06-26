@@ -3,8 +3,10 @@
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
-import Msgcomponent from "./component/Msgcomponent";
-import Section from "./component/Section";
+import Msgcomponent from "../component/Msgcomponent";
+import Section from "../component/Section";
+import Calllogsection from "../component/Calllogsection";
+import { useEffect } from "react";
 export default function HomePage() {
   const router = useRouter();
   const [roomIdInput, setRoomIdInput] = useState("");
@@ -21,7 +23,13 @@ export default function HomePage() {
       alert("Please enter a Room ID");
     }
   };
+useEffect(()=>{
+const secondChild = document.body.children[1];
+const width = getComputedStyle(secondChild).width;
+console.log("THe second child div  is ",document.body.children[1])
+console.log("Actual width:", width);
 
+  },[])
   return (
     // <div className="flex flex-col items-center justify-center min-h-screen gap-6 p-4">
     //   <button
@@ -47,8 +55,9 @@ export default function HomePage() {
     //   </button>
     // </div>
     <div className="flex w-[96%] h-full">
-      <Section classname = "w-[100%] lg:w-[30%] h-full"/>
-      <Msgcomponent classname="hidden lg:block w-[70%] h-full"/>
+      <Calllogsection classname = "w-[100%] lg:w-[30%] h-full"/>
+      <div className="hidden lg:block  w-[70%] h-full maincolr border-black border-[2px]"></div>
+      {/* <Msgcomponent classname="w-[70%] h-full"/> */}
 
       
        </div>

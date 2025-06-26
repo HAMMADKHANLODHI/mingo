@@ -3,8 +3,8 @@
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
-import Msgcomponent from "./component/Msgcomponent";
-import Section from "./component/Section";
+import Msgcomponent from "../component/Msgcomponent";
+import ArchieveSection from "../component/ArchiveSection";
 export default function HomePage() {
   const router = useRouter();
   const [roomIdInput, setRoomIdInput] = useState("");
@@ -47,7 +47,7 @@ export default function HomePage() {
     //   </button>
     // </div>
     <div className="flex w-[96%] h-full">
-      <Section classname = "w-[100%] lg:w-[30%] h-full"/>
+      <ArchieveSection classname = "w-[100%] lg:w-[30%] h-full"/>
       <Msgcomponent classname="hidden lg:block w-[70%] h-full"/>
 
       

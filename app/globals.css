@@ -3,6 +3,8 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --maincolor: #1F2937;
+  --hovermaincolor:#4B5563;
 }
 
 @theme inline {
@@ -11,11 +13,32 @@
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
+.maincolr{
+  background-color: var(--maincolor);
+}
+.hovercolor:hover{
+  background-color:#4B5563;
+}
+.sectioncolor{
+  background-color:#111827;
+}
+.hoversectioncolor:hover{
+  background-color:#4B5563;
+}
+.msgcolor{
+  background-color:#4B5563;
+}
+.slow-expand {
+  transition: width 1s ease-in;
+}
+.fast-collapse {
+  transition: width 1s ease-in;
+}
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #ffffff;
+    --foreground: #000000;
   }
 }
 
